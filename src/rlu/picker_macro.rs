@@ -297,13 +297,6 @@ impl_from_exact!(i16, rlua::Value::Integer(x), x, TryFromIntError);
 ))]
 impl_from_exact!(u16, rlua::Value::Integer(x), x, TryFromIntError);
 #[cfg(all(
-    target_pointer_width = "32",
-    not(feature = "rlua_builtin-lua51"),
-    not(feature = "rlua_system-lua51")
-))]
-impl_from_exact_non_failing!(i32, rlua::Value::Integer(x), x);
-#[cfg(all(
-    target_pointer_width = "64",
     not(feature = "rlua_builtin-lua51"),
     not(feature = "rlua_system-lua51")
 ))]
